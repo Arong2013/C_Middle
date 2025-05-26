@@ -1,19 +1,15 @@
-﻿// C_Middle.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
-//
+﻿#include <iostream>
+#include "GameManager.h"
 
-#include <iostream>
+int main() {
+    std::cout << "=== 머그 스타일 게임 ===\n";
+    std::cout << "플레이어(@)를 조작하여 적(E)들을 물리치고 게이트(G)를 통해 다음 레벨로 진행하세요.\n\n";
 
-int main()
-{
-    std::cout << "Hello World!\n";
+    GameManager gameManager;
+    gameManager.Initialize();
+    gameManager.Run();
+    gameManager.Shutdown();
+
+    std::cout << "게임을 종료합니다. 아무 키나 누르세요...\n";
+    return 0;
 }
-
-// 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
-// 프로그램 디버그: <F5> 키 또는 [디버그] > [디버깅 시작] 메뉴
-
-// 시작을 위한 팁: 
-//   1. [솔루션 탐색기] 창을 사용하여 파일을 추가/관리합니다.
-//   2. [팀 탐색기] 창을 사용하여 소스 제어에 연결합니다.
-//   3. [출력] 창을 사용하여 빌드 출력 및 기타 메시지를 확인합니다.
-//   4. [오류 목록] 창을 사용하여 오류를 봅니다.
-//   5. [프로젝트] > [새 항목 추가]로 이동하여 새 코드 파일을 만들거나, [프로젝트] > [기존 항목 추가]로 이동하여 기존 코드 파일을 프로젝트에 추가합니다.

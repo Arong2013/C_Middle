@@ -127,7 +127,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Character.cpp" />
     <ClCompile Include="C_Middle.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="Gate.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Vector2Int.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="GameManager.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="Gate.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Vector2Int.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
