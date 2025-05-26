@@ -4,7 +4,8 @@
 
 GameManager::GameManager()
     : initState(this), playerTurnState(this), enemyTurnState(this),
-    width(20), height(10), isRunning(false), currentLevel(1) {
+    gameOverState(this), gameClearState(this),
+    width(20), height(10), isRunning(false), currentLevel(1), maxLevel(10) {
 }
 
 void GameManager::Initialize() {
@@ -207,9 +208,7 @@ void GameManager::ProcessEnemyTurns() {
 void GameManager::CheckGameOver() {
     // 플레이어 사망 확인
     if (!player->IsAlive()) {
-        std::cout << "게임 오버! 플레이어가 쓰러졌습니다.\n";
-        std::cout << "최종 레벨: " << currentLevel << ", 처치한 적: " << player->GetKills() << "\n";
-        QuitGame();
+        ChangeState(new GameOverState(this));
         return;
     }
 
@@ -219,10 +218,22 @@ void GameManager::CheckGameOver() {
     }
 }
 
+void GameManager::CheckGameClear() {
+    if (currentLevel > maxLevel) {
+        ChangeState(new GameClearState(this));
+    }
+}
+
 void GameManager::NextLevel() {
     std::cout << "게이트를 통과했습니다!\n";
     currentLevel++;
-    GenerateLevel();
+
+    // 최대 레벨 초과 시 게임 클리어
+    CheckGameClear();
+
+    if (isRunning) {
+        GenerateLevel();
+    }
 }
 
 bool GameManager::IsPositionValid(const Vector2Int& position) const {
@@ -314,4 +325,43 @@ void GameManager::ProcessInput() {
     }
 
     MovePlayer(direction);
+}
+
+void GameManager::ShowGameOverUI() const {
+    system("cls");  // 콘솔 화면 지우기
+
+    std::cout << "\n\n";
+    std::cout << "  #####     #    #     # #######    ####### #     # ####### ######  \n";
+    std::cout << " #     #   # #   ##   ## #          #     # #     # #       #     # \n";
+    std::cout << " #        #   #  # # # # #          #     # #     # #       #     # \n";
+    std::cout << " #  #### #     # #  #  # #####      #     # #     # #####   ######  \n";
+    std::cout << " #     # ####### #     # #          #     #  #   #  #       #   #   \n";
+    std::cout << " #     # #     # #     # #          #     #   # #   #       #    #  \n";
+    std::cout << "  #####  #     # #     # #######    #######    #    ####### #     # \n";
+    std::cout << "\n\n";
+
+    std::cout << "                   플레이어가 쓰러졌습니다!\n\n";
+    std::cout << "                   최종 레벨: " << currentLevel << "\n";
+    std::cout << "                   처치한 적: " << player->GetKills() << "\n\n";
+    std::cout << "                   다시 도전해보세요!\n\n";
+}
+
+void GameManager::ShowGameClearUI() const {
+    system("cls");  // 콘솔 화면 지우기
+
+    std::cout << "\n\n";
+    std::cout << "  #####  ####### #     #  #####  ######     #    ####### #     # #        #    ####### ### ####### #     #  \n";
+    std::cout << " #     # #     # ##    # #     # #     #   # #      #    #     # #       # #      #     #  #     # ##    #  \n";
+    std::cout << " #       #     # # #   # #       #     #  #   #     #    #     # #      #   #     #     #  #     # # #   #  \n";
+    std::cout << " #       #     # #  #  # #  #### ######  #     #    #    #     # #     #     #    #     #  #     # #  #  #  \n";
+    std::cout << " #       #     # #   # # #     # #   #   #######    #    #     # #     #######    #     #  #     # #   # #  \n";
+    std::cout << " #     # #     # #    ## #     # #    #  #     #    #    #     # #     #     #    #     #  #     # #    ##  \n";
+    std::cout << "  #####  ####### #     #  #####  #     # #     #    #     #####  ##### #     #    #    ### ####### #     #  \n";
+    std::cout << "\n\n";
+
+    std::cout << "                 축하합니다! 당신은 모든 레벨을 클리어했습니다!\n\n";
+    std::cout << "                 최종 레벨: " << currentLevel - 1 << "\n";
+    std::cout << "                 처치한 적: " << player->GetKills() << "\n";
+    std::cout << "                 플레이어 최종 레벨: " << player->GetLevel() << "\n\n";
+    std::cout << "                 당신은 진정한 용사입니다!\n\n";
 }

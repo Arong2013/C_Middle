@@ -16,6 +16,8 @@ private:
     InitState initState;
     PlayerTurnState playerTurnState;
     EnemyTurnState enemyTurnState;
+    GameOverState gameOverState;
+    GameClearState gameClearState;
 
     // 게임 요소
     std::shared_ptr<Player> player;
@@ -29,6 +31,7 @@ private:
 
     bool isRunning;
     int currentLevel;
+    int maxLevel;  // 최대 레벨 (이 레벨 달성 시 게임 클리어)
 
 public:
     GameManager();
@@ -46,6 +49,7 @@ public:
     void PlayerAttack(const Vector2Int& direction);
     void ProcessEnemyTurns();
     void CheckGameOver();
+    void CheckGameClear();
     void NextLevel();
 
     // 유틸리티 메소드
@@ -55,10 +59,16 @@ public:
     void RenderGame() const;
     void ProcessInput();
 
+    // 게임 오버/클리어 UI
+    void ShowGameOverUI() const;
+    void ShowGameClearUI() const;
+
     // 게터
     int GetWidth() const { return width; }
     int GetHeight() const { return height; }
     std::shared_ptr<Player> GetPlayer() const { return player; }
     bool IsRunning() const { return isRunning; }
+    int GetCurrentLevel() const { return currentLevel; }
+    int GetMaxLevel() const { return maxLevel; }
     void QuitGame() { isRunning = false; }
 };

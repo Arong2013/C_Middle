@@ -11,5 +11,6 @@ int main() {
     gameManager.Shutdown();
 
     std::cout << "게임을 종료합니다. 아무 키나 누르세요...\n";
+
     return 0;
 }

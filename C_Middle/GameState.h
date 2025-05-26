@@ -45,3 +45,23 @@ public:
     void Update() override;
     void Exit() override;
 };
+
+// 게임 오버 상태
+class GameOverState : public GameState {
+public:
+    GameOverState(GameManager* manager) : GameState(manager) {}
+
+    void Enter() override;
+    void Update() override;
+    void Exit() override;
+};
+
+// 게임 클리어 상태
+class GameClearState : public GameState {
+public:
+    GameClearState(GameManager* manager) : GameState(manager) {}
+
+    void Enter() override;
+    void Update() override;
+    void Exit() override;
+};

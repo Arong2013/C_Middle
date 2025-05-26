@@ -1,6 +1,7 @@
 #include "GameState.h"
 #include "GameManager.h"
 #include <iostream>
+#include <conio.h>
 
 // InitState 구현
 void InitState::Enter() {
@@ -51,4 +52,34 @@ void EnemyTurnState::Update() {
 
 void EnemyTurnState::Exit() {
     std::cout << "적 턴 종료\n";
+}
+
+// GameOverState 구현
+void GameOverState::Enter() {
+    gameManager->ShowGameOverUI();
+}
+
+void GameOverState::Update() {
+    std::cout << "아무 키나 누르면 종료합니다...\n";
+    _getch();
+    gameManager->QuitGame();
+}
+
+void GameOverState::Exit() {
+    std::cout << "게임 종료\n";
+}
+
+// GameClearState 구현
+void GameClearState::Enter() {
+    gameManager->ShowGameClearUI();
+}
+
+void GameClearState::Update() {
+    std::cout << "아무 키나 누르면 종료합니다...\n";
+    _getch();
+    gameManager->QuitGame();
+}
+
+void GameClearState::Exit() {
+    std::cout << "게임 종료\n";
 }
