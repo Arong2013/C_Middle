@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{C7AC1C6F-F338-4E63-8D1A-D90CAD6EA09C}|C_Middle\\C_Middle.vcxproj|solutionrelative:C_Middle\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C7AC1C6F-F338-4E63-8D1A-D90CAD6EA09C}|C_Middle\\C_Middle.vcxproj|C:\\C_Middle\\C_Middle\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C7AC1C6F-F338-4E63-8D1A-D90CAD6EA09C}|C_Middle\\C_Middle.vcxproj|solutionrelative:C_Middle\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C7AC1C6F-F338-4E63-8D1A-D90CAD6EA09C}|C_Middle\\C_Middle.vcxproj|C:\\C_Middle\\C_Middle\\C_Middle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C7AC1C6F-F338-4E63-8D1A-D90CAD6EA09C}|C_Middle\\C_Middle.vcxproj|solutionrelative:C_Middle\\C_Middle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C7AC1C6F-F338-4E63-8D1A-D90CAD6EA09C}|C_Middle\\C_Middle.vcxproj|C:\\C_Middle\\C_Middle\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C7AC1C6F-F338-4E63-8D1A-D90CAD6EA09C}|C_Middle\\C_Middle.vcxproj|solutionrelative:C_Middle\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C7AC1C6F-F338-4E63-8D1A-D90CAD6EA09C}|C_Middle\\C_Middle.vcxproj|C:\\C_Middle\\C_Middle\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -94,31 +94,30 @@
               "RelativeToolTip": "C_Middle\\Entity.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-26T20:09:56.711Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T20:09:56.711Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "GameManager.cpp",
               "DocumentMoniker": "C:\\C_Middle\\C_Middle\\GameManager.cpp",
               "RelativeDocumentMoniker": "C_Middle\\GameManager.cpp",
               "ToolTip": "C:\\C_Middle\\C_Middle\\GameManager.cpp",
               "RelativeToolTip": "C_Middle\\GameManager.cpp",
-              "ViewState": "AgIAACoBAAAAAAAAAAAAwG4BAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACQBAAAAAAAAAAAAADIBAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-26T10:20:38.218Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "C_Middle.cpp",
               "DocumentMoniker": "C:\\C_Middle\\C_Middle\\C_Middle.cpp",
               "RelativeDocumentMoniker": "C_Middle\\C_Middle.cpp",
               "ToolTip": "C:\\C_Middle\\C_Middle\\C_Middle.cpp",
               "RelativeToolTip": "C_Middle\\C_Middle.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-26T10:04:56.79Z",
               "EditorCaption": ""
@@ -131,7 +130,7 @@
               "RelativeDocumentMoniker": "C_Middle\\GameManager.h",
               "ToolTip": "C:\\C_Middle\\C_Middle\\GameManager.h",
               "RelativeToolTip": "C_Middle\\GameManager.h",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAwAQAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwCAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-26T10:20:32.277Z",
               "EditorCaption": ""
@@ -146,8 +145,7 @@
               "RelativeToolTip": "C_Middle\\GameState.cpp",
               "ViewState": "AgIAAAYAAAAAAAAAAAAmwFUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-26T10:21:29.139Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T10:21:29.139Z"
             },
             {
               "$type": "Document",
@@ -159,8 +157,7 @@
               "RelativeToolTip": "C_Middle\\Gate.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-26T20:21:00.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T20:21:00.611Z"
             },
             {
               "$type": "Document",
@@ -172,8 +169,7 @@
               "RelativeToolTip": "C_Middle\\GameState.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-05-26T10:19:46.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T10:19:46.399Z"
             },
             {
               "$type": "Document",

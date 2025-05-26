@@ -1,6 +1,7 @@
 #include "GameManager.h"
 #include <random>
 #include <conio.h>  // Windows에서 _getch() 사용을 위한 헤더
+#include <windows.h>  // 여러 파일에 추가됨
 
 GameManager::GameManager()
     : initState(this), playerTurnState(this), enemyTurnState(this),
@@ -254,6 +255,13 @@ void GameManager::RemoveEntity(const Vector2Int& position) {
 }
 
 void GameManager::RenderGame() const {
+    // 화면 지우는 대신 커서 위치를 맨 위로 이동
+    // 이렇게 하면 화면 깜빡임이 줄어듦
+    COORD coord;
+    coord.X = 0;
+    coord.Y = 0;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+
     // 맵 상단 경계
     std::cout << "+";
     for (int x = 0; x < width; ++x) {
@@ -269,7 +277,24 @@ void GameManager::RenderGame() const {
             auto it = entities.find(pos);
 
             if (it != entities.end()) {
+                // 엔티티 타입에 따라 다른 색상 적용
+                HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+                switch (it->second->GetType()) {
+                case EntityType::PLAYER:
+                    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+                    break;
+                case EntityType::ENEMY:
+                    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+                    break;
+                case EntityType::GATE:
+                    SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+                    break;
+                }
+
                 std::cout << it->second->GetSymbol();
+
+                // 색상 원래대로 돌리기
+                SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
             }
             else {
                 std::cout << " ";
@@ -293,12 +318,21 @@ void GameManager::RenderGame() const {
 
     // 조작법
     std::cout << "조작: 방향키(WASD) 이동/공격, Q 종료\n";
+
+    // 빈 줄 추가하여 이전 내용 가리기
+    for (int i = 0; i < 10; ++i) {
+        std::cout << "                                                                      \n";
+    }
 }
+
+
 
 void GameManager::ProcessInput() {
     std::cout << "행동을 선택하세요 (WASD: 이동/공격, Q: 종료): ";
     char input = _getch();  // 키 입력 받기
-    std::cout << input << std::endl;
+
+    // 화면에 입력 키를 표시하지 않음
+    // std::cout << input << std::endl; 
 
     Vector2Int direction(0, 0);
 
@@ -326,6 +360,7 @@ void GameManager::ProcessInput() {
 
     MovePlayer(direction);
 }
+
 
 void GameManager::ShowGameOverUI() const {
     system("cls");  // 콘솔 화면 지우기
